@@ -4,6 +4,7 @@ class ProductManager {
   }
 
   addProduct(product) {
+    product.id = this.products.length + 1;
     this.products.push(product);
   }
 
@@ -23,7 +24,6 @@ class ProductManager {
 
 class Product {
   constructor(title, description, price, thumbnail, code, stock) {
-    this.id = Math.random().toString(36).substr(2, 9);
     this.title = title;
     this.description = description;
     this.price = price;
@@ -63,7 +63,7 @@ productManager.addProduct(product1);
 productManager.addProduct(product2);
 productManager.addProduct(product3);
 
-const productIdToFind = "mg5pgztww";
+const productIdToFind = 3;
 const productById = productManager.getProductById(productIdToFind);
 console.log("productById", productById);
 
